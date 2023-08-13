@@ -1,0 +1,15 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+:root {
+    --primary-backround-color: rgb(252,251,252);
+    --secondary-backround-color: rgb(255,255,255);
+    --primary-grey: rgba(210, 210, 210, 0.5);
+    --secondary-grey: rgba(219, 219, 219, 0.2);
+    --secondary-darkgrey:  rgb(117, 117, 117);
+    --feed-sidebar-width: 319px;
+
+}
