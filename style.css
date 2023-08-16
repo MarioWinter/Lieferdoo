@@ -4,16 +4,78 @@
     margin: 0px;
 }
 
+
 :root {
-    --primary-backround-color: rgb(252,251,252);
-    --secondary-backround-color: rgb(255,255,255);
-    --primary-grey: rgba(210, 210, 210, 0.5);
-    --secondary-grey: rgba(219, 219, 219, 0.2);
-    --secondary-darkgrey:  rgb(117, 117, 117);
+    --primary-backround-color: rgb(255,255,255);
+    --secondary-backround-color: rgb(252,252,252);
+    --logo-lila: rgb(204,140,255);
+    --button-grey: rgb(245,243,241);
+    --green: rgb(30,137,80);
+    --font-grey: rgb(36,46,48);
+    --shedow-grey: rgba(0,0,0, 0.2);
+    --border-grey:  rgb(219,217,215);
+    --backround-hover-grey: rgb(235, 233, 232);
+    --space-20: 20px;
+    --space-8: 8px;
+    --space-4: 4px;
+
     --feed-sidebar-width: 319px;
 
 }
 
+
 body {
     font-size: 16px;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: var(--primary-backround-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px var(--space-20) 0px var(--space-20);
+}
+
+.main-logo {
+    width: 200px;
+    height: 70px;
+}
+
+
+.header-button{
+    margin-left: var(--space-8);
+}
+
+
+.atf-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+.restaurant-logo {
+    width: 90px;
+    height: 90px;
+    border: 1px solid var(--border-grey);
+    border-radius: 10px;
+    background-color: var(--primary-backround-color);
+}
+
+
+.main-container-primary {
+    position: relative;
+    top: -70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.main-container-secondary {
+    max-width: 960px;
+    margin: 0 auto;
 }
