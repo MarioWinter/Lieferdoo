@@ -2,6 +2,7 @@
     font-family: sans-serif;
     box-sizing: border-box;
     margin: 0px;
+    color: var(--secondary-font-grey);
 }
 
 
@@ -12,6 +13,7 @@
     --button-grey: rgb(245,243,241);
     --green: rgb(30,137,80);
     --font-grey: rgb(36,46,48);
+    --secondary-font-grey: rgb(61,77,80);
     --shedow-grey: rgba(0,0,0, 0.2);
     --border-grey:  rgb(219,217,215);
     --backround-hover-grey: rgb(235, 233, 232);
@@ -26,6 +28,10 @@
 
 body {
     font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--font-grey);
 }
 
 header {
@@ -76,6 +82,89 @@ header {
 
 
 .main-container-secondary {
-    max-width: 960px;
+    max-width: 45vw;
     margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.icon-container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.restaurant-info-button {
+    display: flex;
+    background-color: var(--button-grey);
+    border-radius: 50px;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+    margin-left: var(--space-20);
+}
+
+
+.restaurant-likes {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-top: var(--space-20);
+}
+
+
+.restaurant-reviews {
+    margin-left: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.restaurant-reviews:hover {
+    text-decoration: none;
+}
+
+
+.restaurant-delivery {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+    
+}
+
+.restaurant-info {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dot {
+    background-color: var(--secondary-font-grey);
+    margin-right: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+}
+
+.icon-space {
+    margin-right: 3px;
+}
+
+.green {
+    fill: var(--green);
+    color: var(--green);
+}
+
+.rastaurant-description {
+    margin-top: var(--space-20);
 }
