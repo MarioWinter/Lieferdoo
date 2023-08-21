@@ -35,17 +35,17 @@
     <main>
         <img class="atf-img" src="./img/header-pizza-food.jpg" alt="Pizza Shop Image">
         <div class="main-container-primary">
-            <div class="main-container-secondary">
-                <div>
+            <section class="upper-bkd-container">
+                <div class="main-container-secondary">
                     <img class="restaurant-logo" src="./img/Pizza Milano.png" alt="Pizza Milano Logo">
                     <div class="d-flex">
                         <h1>Pizza Milano Restaurante</h1>
 
                         <div class="icon-container">
-                            <div class="restaurant-info-button">
+                            <div class="restaurant-info-button margin-left-10">
                                 <svg viewBox="0 0 16 16" width="24px" height="24px" role="presentation" focusable="false" aria-hidden="true"><path d="M8 1.219A6.781 6.781 0 1014.781 8 6.79 6.79 0 008 1.219zm0 12.25A5.469 5.469 0 118 2.53a5.469 5.469 0 010 10.938zM7.344 7.29h1.312v3.334H7.344V7.291zm1.531-1.916a.875.875 0 11-1.75 0 .875.875 0 011.75 0z"></path></svg>
                             </div>
-                            <div class="restaurant-info-button">
+                            <div class="restaurant-info-button margin-left-10">
                                 <svg viewBox="0 0 16 16" width="24px" height="24px" role="presentation" focusable="false" aria-hidden="true"><path d="M8 14.195L2.234 8.263a3.745 3.745 0 010-5.128 3.413 3.413 0 014.9 0l.875.875.875-.875a3.421 3.421 0 014.909 0 3.754 3.754 0 010 5.128L8 14.195zM4.675 3.406a2.082 2.082 0 00-1.514.648 2.432 2.432 0 000 3.29l4.84 4.961 4.838-4.97a2.432 2.432 0 000-3.281 2.135 2.135 0 00-3.045 0L8.735 5.086a1.103 1.103 0 01-1.531 0L6.189 4.054a2.1 2.1 0 00-1.514-.648z"></path></svg>
                             </div> 
                         </div>
@@ -91,46 +91,59 @@
                         <p>Ab einem Bestellwert von 50 € erhalten Sie eine Flasche Wein oder Coca Cola gratis dazu! Bitte geben Sie Ihren Wunsch im Kommentarfeld ein. <span>...</span><span>Weiterlesen</span></p>
                         <div>Weniger anzeigen</div>
                     </div>
-
-                    <ul class="rastaurant-categories">
-                        <li class="grey-backround-button"><h4>Vorspeisen</h4></li>
-                        <li class="grey-backround-button"><h4>Salat</h4></li>
-                        <li class="grey-backround-button"><h4>Pizza</h4></li>
-                        <li class="grey-backround-button"><h4>Nudelgerichte</h4></li>
-                    </ul>
-                </div>
-                <div class="menuContainer" onload="render()">
-                    <!-- JS menu Content Start-->
-                    <img src="./img/startersjpg.jpeg" alt="Vorspeisen">
-                    <h2 class="headline">Vorspeisen</h2>
-                    <div class="menu" id="menuContent0">
-                        <div class="menuHeader">
-                            <div class="addCardButton">
-                                <svg viewBox="0 0 16 16" width="16px" height="16px" role="presentation" focusable="false" aria-hidden="true"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344z"></path></svg>
-                            </div>
-                            <h3 class="">Bruschetta</h3>
+                    <div class="rastaurant-categories-container">
+                        <div class="restaurant-info-button">
+                            <svg fill="rgb(61,77,80)" width="18px" height="18px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+                                <path d="M416,208C416,253.9 401.1,296.3 376,330.7L502.6,457.4C515.1,469.9 515.1,490.2 502.6,502.7C490.1,515.2 469.8,515.2 457.3,502.7L330.7,376C296.3,401.2 253.9,416 208,416C93.1,416 0,322.9 0,208C0,93.1 93.1,0 208,0C322.9,0 416,93.1 416,208ZM208,352C286.996,352 352,286.996 352,208C352,129.004 286.996,64 208,64C129.004,64 64,129.004 64,208C64,286.996 129.004,352 208,352Z">
+                            </svg>
                         </div>
-                        <div class="menuDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptate ipsam, nobis quae quibusdam nihil incidunt corporis adipisci, vel magnam fugiat? Ratione, quisquam magnam voluptatibus alias voluptatem itaque assumenda veritatis!</div>
-                        <h3 class="">8,50 €</h3>
+                        <ul class="rastaurant-categories">
+                            <li class="grey-backround-button"><h4>Vorspeisen</h4></li>
+                            <li class="grey-backround-button"><h4>Salat</h4></li>
+                            <li class="grey-backround-button"><h4>Pizza</h4></li>
+                            <li class="grey-backround-button"><h4>Nudelgerichte</h4></li>
+                        </ul>
                     </div>
-                    <!-- JS menu Content Ende-->
                 </div>
-                <div>
+            </section>
+
+            <section class="secondary-backround-color">
+                <div class="main-container-secondary">
+                    
+                    <div class="menuContainer" onload="render()">
+                        <!-- JS menu Content Start-->
+                        <img src="./img/startersjpg.jpeg" alt="Vorspeisen">
+                        <h2 class="headline">Vorspeisen</h2>
+                        <div class="menu" id="menuContent0">
+                            <div class="menuHeader">
+                                <div class="addCardButton">
+                                    <svg viewBox="0 0 16 16" width="16px" height="16px" role="presentation" focusable="false" aria-hidden="true"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344z"></path></svg>
+                                </div>
+                                <h3 class="">Bruschetta</h3>
+                            </div>
+                            <div class="menuDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptate ipsam, nobis quae quibusdam nihil incidunt corporis adipisci, vel magnam fugiat? Ratione, quisquam magnam voluptatibus alias voluptatem itaque assumenda veritatis!</div>
+                            <h3 class="">8,50 €</h3>
+                        </div>
+                        <!-- JS menu Content Ende-->
+                    </div>
+                    
                     <div>
-                        <svg viewBox="0 0 16 16" width="32px" height="32px" role="presentation" focusable="false" aria-hidden="true"><path d="M12.375 2.094h-8.75a1.54 1.54 0 00-1.531 1.531v10.281h11.812V3.625a1.54 1.54 0 00-1.531-1.531zm.219 10.5H8.656v-1.969H7.344v1.969H3.406V3.625a.219.219 0 01.219-.219h8.75a.219.219 0 01.219.219v8.969zm-3.719-7h1.75v1.312h-1.75V5.594zm-3.5 0h1.75v1.312h-1.75V5.594zm3.5 2.625h1.75V9.53h-1.75V8.22zm-3.5 0h1.75V9.53h-1.75V8.22z"></path></svg>
-                        <h2>Impressum</h2>
+                        <div>
+                            <svg viewBox="0 0 16 16" width="32px" height="32px" role="presentation" focusable="false" aria-hidden="true"><path d="M12.375 2.094h-8.75a1.54 1.54 0 00-1.531 1.531v10.281h11.812V3.625a1.54 1.54 0 00-1.531-1.531zm.219 10.5H8.656v-1.969H7.344v1.969H3.406V3.625a.219.219 0 01.219-.219h8.75a.219.219 0 01.219.219v8.969zm-3.719-7h1.75v1.312h-1.75V5.594zm-3.5 0h1.75v1.312h-1.75V5.594zm3.5 2.625h1.75V9.53h-1.75V8.22zm-3.5 0h1.75V9.53h-1.75V8.22z"></path></svg>
+                            <h2>Impressum</h2>
+                        </div>
+                        <p>Andy Hertzfeld handelt im Namen von Pizza Milano Restaurante</p>
+                        <p>Hauptstraße 1234</p>
+                        <p>12345 Musterstadt</p>
+                        <a href="#">Sende uns eine E-Mail</a>
+                        <p>Fax: 0800 123 45 678</p>
                     </div>
-                    <p>Andy Hertzfeld handelt im Namen von Pizza Milano Restaurante</p>
-                    <p>Hauptstraße 1234</p>
-                    <p>12345 Musterstadt</p>
-                    <a href="#">Sende uns eine E-Mail</a>
-                    <p>Fax: 0800 123 45 678</p>
+                    <div class="hr"></div>
+                    <div>
+                        <p>Wir sind ein professioneller Anbieter. <span>Erfahre mehr</span> darüber, wie wir gemeinsam mit Lieferoo.de die Verbraucherverantwortung übernehmen.</p>
+                    </div>
                 </div>
-                <div class="hr"></div>
-                <div>
-                    <p>Wir sind ein professioneller Anbieter. <span>Erfahre mehr</span> darüber, wie wir gemeinsam mit Lieferoo.de die Verbraucherverantwortung übernehmen.</p>
-                </div>
-            </div>
+            </section>
         </div>
     </main>
     <aside class="shoppingCart">
