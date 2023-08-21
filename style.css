@@ -120,7 +120,7 @@ header {
 
 
 .main-container-secondary {
-    max-width: 45vw;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -150,12 +150,25 @@ justify-content: center;
 }
 
 
-
 .restaurant-info-button:hover {
     background-color: var(--backround-hover-grey);
 }
 
 
+.add-button {
+    display: flex;
+    background-color: var(--button-grey);
+    border-radius: 50px;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.add-button:hover {
+    background-color: var(--backround-hover-grey);
+}
 
 
 .restaurant-likes {
@@ -234,7 +247,7 @@ justify-content: center;
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
-    width: 45vw;
+    width: 960px;
     padding: 0px;
     color: var(--secondary-font-grey);
 }
@@ -264,4 +277,42 @@ justify-content: center;
     width: 100vw;
 }
 
+
+.menu-img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-top: 24px;
+}
+
+.headline {
+    margin: 24px 0px 12px 0px;
+}
+
+.menu {
+    background-color: var(--primary-backround-color);
+    width: 100%;
+    border: 1px solid var(--border-grey);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+
+.menu-description {
+    margin: 5px 0px;
+}
+
+
+.menu-price {
+    margin-top: 20px;
+}
 
