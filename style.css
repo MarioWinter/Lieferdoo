@@ -21,7 +21,7 @@
     --space-8: 8px;
     --space-4: 4px;
 
-    --feed-sidebar-width: 319px;
+    --feed-sidebar-width: 350px;
 
 }
 
@@ -61,6 +61,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0px var(--space-20) 0px var(--space-20);
+    margin-bottom: 8px;
+    box-shadow: 0px 3px 5px 0px var(--border-grey);
 }
 
 .margin-left-10 {
@@ -93,10 +95,52 @@ header {
 }
 
 
+.content-container {
+    display: flex;
+}
+
+
+.left-container {
+    width: calc(100vw - var(--feed-sidebar-width));
+    margin-top: -8px;
+}
+
+
+.shopping-card {
+    width: var(--feed-sidebar-width);
+    height: 100vh;
+    background-color: var(--primary-backround-color);
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 3px 5px 0px var(--border-grey);
+}
+
+
+.shopping-container {
+    text-align: center;
+}
+
+.header-shopping {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+.shopping-card-content {
+    text-align: center;
+}
+
+.empty-card {
+    padding-top: 15px;
+}
+
+
+
 .atf-img {
     width: 100%;
     height: 350px;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -106,6 +150,8 @@ header {
     border: 1px solid var(--border-grey);
     border-radius: 10px;
     background-color: var(--primary-backround-color);
+    position: relative;
+    z-index: 3;
 }
 
 
@@ -167,7 +213,7 @@ justify-content: center;
 
 
 .add-button:hover {
-    background-color: var(--backround-hover-grey);
+    background-color: var(--logo-lila);
 }
 
 
@@ -296,6 +342,10 @@ justify-content: center;
     border: 1px solid var(--border-grey);
     border-radius: 15px;
     padding: 15px;
+}
+
+.menu:hover {
+    background-color: var(--button-grey);
 }
 
 
