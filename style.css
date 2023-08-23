@@ -8,7 +8,8 @@
 
 :root {
     --primary-backround-color: rgb(255,255,255);
-    --secondary-backround-color: rgb(248, 248, 248);
+    --secondary-backround-color: rgb(251, 251, 251);
+    --footer-backround-color: rgb(239,237,234);
     --logo-lila: rgb(204,140,255);
     --button-grey: rgb(245,243,241);
     --green: rgb(30,137,80);
@@ -20,6 +21,7 @@
     --space-20: 20px;
     --space-8: 8px;
     --space-4: 4px;
+    --heigt-main: calc(100% - 70px);
 
     --feed-sidebar-width: 350px;
 
@@ -29,6 +31,16 @@ body {
     font-size: 14px;
 }
 
+
+footer {
+    background-color: var(--footer-backround-color);
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
 
 h1 {
     color: var(--font-grey);
@@ -108,7 +120,7 @@ header {
 
 .shopping-card {
     width: var(--feed-sidebar-width);
-    height: 100vh;
+    height: calc(100vh + 80px);
     background-color: var(--primary-backround-color);
     position: sticky;
     top: 0;
@@ -161,7 +173,6 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    
 }
 
 
@@ -312,7 +323,7 @@ justify-content: center;
 
 
 .upper-bkd-container {
-    width: 100vw;
+    width: 100%;
     box-shadow: 0px 3px 5px 0px var(--border-grey);
 }
 
@@ -320,7 +331,8 @@ justify-content: center;
 .secondary-backround-color {
     background-color: var(--secondary-backround-color);
     margin-top: 5px;
-    width: 100vw;
+    width: 100%;
+    height: calc(100% + 70px);
 }
 
 
@@ -332,9 +344,11 @@ justify-content: center;
     margin-top: 24px;
 }
 
+
 .headline {
     margin: 24px 0px 12px 0px;
 }
+
 
 .menu {
     background-color: var(--primary-backround-color);
@@ -343,6 +357,7 @@ justify-content: center;
     border-radius: 15px;
     padding: 15px;
 }
+
 
 .menu:hover {
     background-color: var(--button-grey);
@@ -366,3 +381,59 @@ justify-content: center;
     margin-top: 20px;
 }
 
+.hr {
+    height: 1px;
+    background-color: var(--border-grey);
+    margin: var(--space-20) 0px;
+}
+
+
+.impressum-header {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: var(--space-8);
+}
+
+
+.impressum {
+    margin-left: var(--space-4);
+}
+
+
+.space-top-4 {
+    margin-top: var(--space-4);
+}
+
+
+.space-bottom-50 {
+    margin-bottom: 50px;
+}
+
+
+.underline-mark {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.underline-mark:hover {
+    text-decoration: none;
+}
+
+
+.info-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: var(--space-20);
+}
+
+
+.link-mark:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
