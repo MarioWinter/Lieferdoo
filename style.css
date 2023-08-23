@@ -124,7 +124,7 @@ header {
     background-color: var(--primary-backround-color);
     position: sticky;
     top: 0;
-    box-shadow: 0px 3px 5px 0px var(--border-grey);
+    box-shadow: -2px 3px 5px 0px var(--border-grey);
 }
 
 
@@ -163,13 +163,12 @@ header {
     border-radius: 10px;
     background-color: var(--primary-backround-color);
     position: relative;
+    top: -70px;
     z-index: 3;
 }
 
 
 .main-container-primary {
-    position: relative;
-    top: -70px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -186,6 +185,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    top: -40px;
 }
 
 
@@ -233,6 +234,8 @@ justify-content: center;
     justify-content:flex-start;
     align-items: center;
     margin-top: var(--space-20);
+    position: relative;
+    top: -30px;
 }
 
 
@@ -253,6 +256,8 @@ justify-content: center;
     align-items: center;
     justify-content: flex-start;
     margin-top: 5px;
+    position: relative;
+    top: -30px;
     
 }
 
@@ -288,6 +293,8 @@ justify-content: center;
 .rastaurant-description {
     margin-top: var(--space-20);
     width: 600px;
+    position: relative;
+    top: -25px;
 }
 
 
@@ -332,7 +339,6 @@ justify-content: center;
     background-color: var(--secondary-backround-color);
     margin-top: 5px;
     width: 100%;
-    height: calc(100% + 70px);
 }
 
 
@@ -356,6 +362,7 @@ justify-content: center;
     border: 1px solid var(--border-grey);
     border-radius: 15px;
     padding: 15px;
+    margin: var(--space-20) 0px;
 }
 
 
@@ -436,4 +443,8 @@ justify-content: center;
 .link-mark:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.d-none {
+    display: none;
 }
