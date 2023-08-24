@@ -448,3 +448,60 @@ justify-content: center;
 .d-none {
     display: none;
 }
+
+
+.card-name-price {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+}
+
+
+.card-extras {
+    margin: 15px 10px 15px 35px;
+    display: flex;
+}
+
+
+.card-info-plusminus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 10px 15px 35px;
+}
+
+
+.card-buttons {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.select-button {
+    display: flex;
+    background-color: var(--button-grey);
+    border-radius: 50px;
+    justify-content: center;
+    padding: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.select-button:hover {
+    background-color: var(--backround-hover-grey); 
+}
+
+
+.bold {
+    font-weight: 600;
+}
+
+.space-right {
+    margin-right: 15px;
+}
+

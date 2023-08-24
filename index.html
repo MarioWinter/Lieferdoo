@@ -194,22 +194,50 @@
     <!-- JS new Item ShoppingCard Start-->
                 <div class="new-item">
                     <div class="card-name-price">
-                        <span>1 x</span>
-                        <span>Bruschetta</span>
+                        <div class="bold">
+                            <span class="space-right">1</span>
+                            <span class="underline-mark">Bruschetta</span>
+                        </div>
                         <span>8,50 €</span>
                     </div>
-                    <div class="card-extras">Tomaten mit Zwiebeln auf einem Brot</div>
-                    <div class="card-info-selection">
-                        <span>Anmerkung hinzufügen</span>
-                        <img src="./icons/minus-solid.svg" alt="minus symble">
-                        <img src="./icons/plus-solid.svg" alt="plus symble">
+                    
+                    <div class="card-extras">
+                        <div>Tomaten mit Zwiebeln auf einem Brot</div>
+                    </div>
+
+                    <div class="card-info-plusminus">
+                        <span class="underline-mark">Anmerkung hinzufügen</span>
+                        <div class="card-buttons">
+                            <svg class="select-button" width="38px" height="38px" viewBox="0 0 1300 1300">
+                                <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
+                            </svg>
+                            <svg class="select-button" width="38px" height="38px" viewBox="0 0 1300 1300">
+                                <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
+                                <path d="M625.984,58.106C625.984,45.06 636.56,34.484 649.606,34.484C662.652,34.484 673.228,45.06 673.228,58.106L673.228,1241.11C673.228,1254.15 662.652,1264.73 649.606,1264.73C636.56,1264.73 625.984,1254.15 625.984,1241.11L625.984,58.106Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
     <!-- JS new Item ShoppingCard End-->
+    <!-- JS Costs ShoppingCard Start-->
+                <div>
+                    <div>
+                        <span>Zwischensumme</span>
+                        <span>8,50 €</span>
+                    </div>
+                    <div>
+                        <span>Lieferkosten</span>
+                        <span>2 €</span>
+                    </div>
+                    <div>
+                        <span>Gesamt</span>
+                        <span>10,50 €</span>
+                    </div>
+
+                    <button>Bezahlen()</button>
+                </div>
+    <!-- JS Costs ShoppingCard End-->
             </div>
-
-
-
         </aside>
 
     </main>
