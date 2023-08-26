@@ -5,7 +5,7 @@ function loadMenuItem(i) {
             <div class="menu-header">
 
                 <h3>${menu['item']}</h3>
-                <div class="add-button" onclick="addToCard(${i}, ${menu['item']})">
+                <div class="add-button" onclick="addToCard(${i})">
                     <svg viewBox="0 0 16 16" width="24px" height="24px" role="presentation" focusable="false" aria-hidden="true"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344z"></path></svg>
                 </div>
                 
@@ -34,20 +34,20 @@ function loadEmptyCard() {
 };
 
 
-function loadBasket(i, price) {
-    let item = food[i];
+function loadBasket(i, index) {
+    let item = basket[0];
     return  `
     <div class="new-item">
         <div class="card-name-price">
             <div class="bold">
-                <span class="space-right">1</span>
-                <span class="underline-mark">Bruschetta</span>
+                <span class="space-right">${item['amount'][i]}</span>
+                <span class="underline-mark">${item['item'][i]}</span>
             </div>
-            <span>8,50 €</span>
+            <span>${item['price'][i]} €</span>
         </div>
     
         <div class="card-extras">
-            <div>Tomaten mit Zwiebeln auf einem Brot</div>
+            <div>${item['itemdescription'][i]}</div>
         </div>
 
         <div class="card-info-plusminus">
