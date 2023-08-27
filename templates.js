@@ -52,7 +52,7 @@ function loadBasket(i, index) {
 
         <div class="card-info-plusminus">
             <span class="underline-mark">Anmerkung hinzufügen</span>
-            <div class="card-buttons">
+            <div class="card-buttons onclick="basketReduce(i)">
                 <svg class="select-button" width="38px" height="38px" viewBox="0 0 1300 1300">
                     <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                 </svg>
