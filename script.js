@@ -14,15 +14,40 @@ function render() {
     // templateSumMobile();
 }
 
+
 function addToCard(index) {
     let shoppingBasket = document.getElementById('shoppingCardContent');
+    shoppingBasket.innerHTML = '';
+
     let menu = food[index]['item'];
     let j = getMenuIndex(menu);
     pushBasket(j, index);
-    shoppingBasket.innerHTML = '';
+
+    // Bei zufaelliger Reihenfolge funktioniert es nicht 27.08.2023
     for (let i = 0; i < basket[0]['item'].length; i++) {
-        
-        shoppingBasket.innerHTML += loadBasket(i, index);
+        let item = basket[0]['item'][i];
+        let menuIndex = getMenuIndex(item); 
+        shoppingBasket.innerHTML += loadBasket(i, menuIndex);
+    }
+    
+}
+
+
+function removeFromCard(index) {
+    let shoppingBasket = document.getElementById('shoppingCardContent');
+    shoppingBasket.innerHTML = '';
+    let menu = food[index]['item'];
+    let j = getMenuIndex(menu);
+    basketReduce(j, index);
+
+    for (let i = 0; i < basket[0]['item'].length; i++) {
+        let item = basket[0]['item'][i];
+        let menuIndex = getMenuIndex(item);
+        shoppingBasket.innerHTML += loadBasket(i, menuIndex);
+    }
+
+    if (basket[0]['item'].length == 0) {
+        loadEmptyCard();
     }
     
 }
@@ -30,12 +55,12 @@ function addToCard(index) {
 
 function pushBasket(j, index) {
     let menu = food[index]['item'];
-    let price = food[index]['price'];
     let descrip = food[index]['itemdescription'];
+    let price = food[index]['price'];
 
     let baskets = basket[0];
-    let basketAmounts = baskets['amount'];
     let basketPrices = baskets['price'];
+    let basketAmounts = baskets['amount'];
     let basketMenus = baskets['item'];
     let basektDescrips = baskets['itemdescription'];
 
@@ -47,10 +72,29 @@ function pushBasket(j, index) {
         basektDescrips.push(descrip);
 
     }  else {
-        let basketAmount = baskets['amount'][j];
-        let basketPrice = baskets['price'][j];
-        baskets['amount'][j] = basketAmount + 1;
-        baskets['price'][j] = basketPrice + price;
+        amountIncrease(j);
+        priceIncrease(j, index);
+    }
+}
+
+
+function basketReduce(j, index) {
+
+    let basketAmount = basket[0]['amount'][j];
+    let basketPrices = basket[0]['price'];
+    let basketAmounts = basket[0]['amount'];
+    let basketMenus = basket[0]['item'];
+    let basektDescrips = basket[0]['itemdescription'];
+
+    if (basketAmount > 1) {
+        priceReduce(j, index);
+        amountReduce(j);
+
+    }  else {
+        basketAmounts.splice(j, 1);
+        basketMenus.splice(j, 1);
+        basektDescrips.splice(j, 1);
+        basketPrices.splice(j, 1);
     }
 }
 
@@ -60,82 +104,33 @@ function getMenuIndex(menu) {
     return index;
 }
 
-//funtion geht nocht nicht 27.08.2023 12:08
-function priceReduce(j, menu) {
-    let newPrice = basket - menu;
-    return newPrice
-}
-//
 
-function priceIncrease(basket, menu) {
-    let newPrice = basket + menu;
-    return newPrice
+function priceReduce(j, index) {
+    let menuPrice = food[index]['price'];
+    let basketPrice = basket[0]['price'][j];
+
+    let price = basketPrice - menuPrice;
+    basket[0]['price'][j] = price;
+}
+
+
+function priceIncrease(j, index) {
+    let menuPrice = food[index]['price'];
+    let basketPrice = basket[0]['price'][j];
+
+    let price = basketPrice + menuPrice;
+    basket[0]['price'][j] = price;
 }
 
 
 function amountIncrease(j) {
-    let basketAmount = baskets['amount'][j];
-    baskets['amount'][j] = basketAmount + 1;
+    let basketAmount = basket[0]['amount'][j];
+    basket[0]['amount'][j] = basketAmount + 1;
 }
 
 
 function amountReduce(j) {
-    let basketAmount = baskets['amount'][j];
-    baskets['amount'][j] = basketAmount - 1;
+    let basketAmount = basket[0]['amount'][j];
+    basket[0]['amount'][j] = basketAmount - 1;
 
 }
-
-
-function basketIncrease(basketMenu, foodMenu) {
-    let baskets = basket[0];
-    let foods = food[index];
-
-    let basketAmount = baskets['amount'][i];
-    let basketAmounts = baskets['amount'];
-
-    let basketMenu = baskets['item'][i];
-
-    let menuPrice = foods['price'];
-    let basketPrice = baskets['price'][i];
-    
-    let basektDescrip = baskets['itemdescription'][i];
-}
-
-
-function basketReduce(i, index) {
-    let baskets = basket[0];
-    let foods = food[index];
-
-    let basketAmount = baskets['amount'][i];
-    let basketAmounts = baskets['amount'];
-
-    let basketMenu = baskets['item'][i];
-
-    let menuPrice = foods['price'];
-    let basketPrice = baskets['price'][i];
-    
-    let basektDescrip = baskets['itemdescription'][i];
-
-    if (basketAmount > 1) {
-        
-
-        let price = priceReduce(basketPrice, menuPrice);
-        baskets['price'][i] = price;
-
-    }  else {
-        basketAmounts.splice(i,1);
-
-    }
-
-}
-
-
-
-
-// function getContentIndex(menu) {
-//     let foods = food[i];
-//     for (let i = 0; i < foods.length; i++) {
-//         let index = foods['item'].indexOf(menu);
-//         return index        
-//     }
-// }

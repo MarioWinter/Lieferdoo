@@ -15,7 +15,6 @@ function loadMenuItem(i) {
         </div>
 
     `;
-
 }
 
 
@@ -34,7 +33,7 @@ function loadEmptyCard() {
 };
 
 
-function loadBasket(i, index) {
+function loadBasket(i, menuIndex) {
     let item = basket[0];
     return  `
     <div class="new-item">
@@ -52,11 +51,11 @@ function loadBasket(i, index) {
 
         <div class="card-info-plusminus">
             <span class="underline-mark">Anmerkung hinzufügen</span>
-            <div class="card-buttons onclick="basketReduce(i)">
-                <svg class="select-button" width="38px" height="38px" viewBox="0 0 1300 1300">
+            <div class="card-buttons">
+                <svg class="select-button" onclick="removeFromCard(${menuIndex})" width="38px" height="38px" viewBox="0 0 1300 1300">
                     <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                 </svg>
-                <svg class="select-button" width="38px" height="38px" viewBox="0 0 1300 1300">
+                <svg class="select-button" onclick="addToCard(${menuIndex})" width="38px" height="38px" viewBox="0 0 1300 1300">
                     <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                     <path d="M625.984,58.106C625.984,45.06 636.56,34.484 649.606,34.484C662.652,34.484 673.228,45.06 673.228,58.106L673.228,1241.11C673.228,1254.15 662.652,1264.73 649.606,1264.73C636.56,1264.73 625.984,1254.15 625.984,1241.11L625.984,58.106Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                 </svg>
