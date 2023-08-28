@@ -15,15 +15,16 @@ function render() {
 }
 
 
-function addToCard(index) {
+function addToCard(menu) {
     let shoppingBasket = document.getElementById('shoppingCardContent');
     shoppingBasket.innerHTML = '';
-
-    let menu = food[index]['item'];
     let j = getMenuIndex(menu);
+    let index = getItemIndex(menu);
+
+
     pushBasket(j, index);
 
-    // Bei zufaelliger Reihenfolge funktioniert es nicht 27.08.2023
+  
     for (let i = 0; i < basket[0]['item'].length; i++) {
         let item = basket[0]['item'][i];
         let menuIndex = getMenuIndex(item); 
@@ -33,11 +34,12 @@ function addToCard(index) {
 }
 
 
-function removeFromCard(index) {
+function removeFromCard(menu) {
     let shoppingBasket = document.getElementById('shoppingCardContent');
     shoppingBasket.innerHTML = '';
-    let menu = food[index]['item'];
+    
     let j = getMenuIndex(menu);
+    let index = getItemIndex(menu);
     basketReduce(j, index);
 
     for (let i = 0; i < basket[0]['item'].length; i++) {
@@ -102,6 +104,16 @@ function basketReduce(j, index) {
 function getMenuIndex(menu) {
     let index = basket[0]['item'].indexOf(menu);
     return index;
+}
+
+function getItemIndex(menu) {
+    for (let i = 0; i < food.length; i++) {
+
+        if (food[i]['item'] == menu) {
+            return i;
+        }  
+    }
+
 }
 
 
