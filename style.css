@@ -99,11 +99,21 @@ header {
     align-items: center;
     cursor: pointer;
     margin-left: var(--space-20);
+    position: relative;
 }
 
 
 .header-backround-button:hover {
     background-color: var(--button-grey);
+}
+
+.basket-counter {
+    font-weight: 600;
+    color: var(--logo-lila);
+    background-color: var(--primary-backround-color);
+    position: absolute;
+    bottom: 3px;
+    right: 8px;
 }
 
 
@@ -433,7 +443,7 @@ justify-content: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 70%;
     list-style-type: none;
     padding: 0;
     margin-bottom: var(--space-20);

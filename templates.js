@@ -5,7 +5,7 @@ function loadMenuItem(i) {
             <div class="menu-header">
 
                 <h3>${menu['item']}</h3>
-                <div class="add-button" onclick="addToCard('${menu['item']}')">
+                <div class="add-button" onclick="addToCard('${menu['item']}'), costsUp('${menu['item']}')">
                     <svg viewBox="0 0 16 16" width="24px" height="24px" role="presentation" focusable="false" aria-hidden="true"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344z"></path></svg>
                 </div>
                 
@@ -52,10 +52,10 @@ function loadBasket(i, menuIndex) {
         <div class="card-info-plusminus">
             <span class="underline-mark">Anmerkung hinzufügen</span>
             <div class="card-buttons">
-                <svg class="select-button" onclick="removeFromCard('${item['item'][i]}')" width="38px" height="38px" viewBox="0 0 1300 1300">
+                <svg class="select-button" onclick="removeFromCard('${item['item'][i]}'), costsDown('${item['item'][i]}')" width="38px" height="38px" viewBox="0 0 1300 1300">
                     <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                 </svg>
-                <svg class="select-button" onclick="addToCard('${item['item'][i]}')" width="38px" height="38px" viewBox="0 0 1300 1300">
+                <svg class="select-button" onclick="addToCard('${item['item'][i]}'), costsUp('${item['item'][i]}')" width="38px" height="38px" viewBox="0 0 1300 1300">
                     <path d="M1241.11,625.984C1254.15,625.984 1264.73,636.56 1264.73,649.606C1264.73,662.652 1254.15,673.228 1241.11,673.228L58.106,673.228C45.06,673.228 34.484,662.652 34.484,649.606C34.484,636.56 45.06,625.984 58.106,625.984L1241.11,625.984Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                     <path d="M625.984,58.106C625.984,45.06 636.56,34.484 649.606,34.484C662.652,34.484 673.228,45.06 673.228,58.106L673.228,1241.11C673.228,1254.15 662.652,1264.73 649.606,1264.73C636.56,1264.73 625.984,1254.15 625.984,1241.11L625.984,58.106Z" style="fill:rgb(0,0,0);stroke:black;stroke-width:20px;"/>
                 </svg>
@@ -66,7 +66,34 @@ function loadBasket(i, menuIndex) {
 }
 
 
+function loadCosts(sum) {
+    let delivCosts = 2;
+    
+    if (sum > 25) {
+        delivCosts = 0;
+    }
+    let totalCosts = sum + delivCosts;
 
+    return `
+        <div>
+            <span>Zwischensumme</span>
+            <span id="subtotal">${sum} €</span>
+        </div>
+        <div>
+            <span>Lieferkosten</span>
+            <span id="deliveryCosts">${delivCosts} €</span>
+        </div>
+        <div>
+            <span>Gesamt</span>
+            <span id="totalCosts">${totalCosts} €</span>
+        </div>
+
+        <button>Bezahlen()</button>    
+    
+    
+    `;
+
+}
 
 
 // function loadCategory(position) {

@@ -5,13 +5,14 @@ let categorys = [
     },
 ]
 
-let basket = [
-    {
+let basket = [{
+
         'item' : [],
         'price' : [],
         'itemdescription' : [],
         'amount' : [],
-    },
+        'sum' : 0,
+    }
 ]
 
 
