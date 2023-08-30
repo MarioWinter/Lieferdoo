@@ -1,5 +1,6 @@
 function loadMenuItem(i) {
     let menu = food[i];
+    let price = fixNumber(menu['price']);
     return `
         <div class="menu" id="menu-content${i}">
             <div class="menu-header">
@@ -11,7 +12,7 @@ function loadMenuItem(i) {
                 
             </div>
             <div class="menu-description">${menu['itemdescription']}</div>
-            <h3 class="menu-price">${menu['price']} €</h3>
+            <h3 class="menu-price">${price} €</h3>
         </div>
 
     `;
@@ -21,6 +22,7 @@ function loadMenuItem(i) {
 function loadEmptyCard() {
     let emptyCard = document.getElementById('shoppingCardContent');
     emptyCard.innerHTML = '';
+    
     emptyCard.innerHTML = `
 
         <svg viewBox="0 0 2001 2001" fill="rgb(0, 0, 0)" width="32px" height="32px" role="presentation" focusable="false" aria-hidden="true">
@@ -33,8 +35,9 @@ function loadEmptyCard() {
 };
 
 
-function loadBasket(i, menuIndex) {
+function loadBasket(i) {
     let item = basket[0];
+    let itemPrice = fixNumber(item['price'][i]);
     return  `
     <div class="new-item">
         <div class="card-name-price">
@@ -42,7 +45,7 @@ function loadBasket(i, menuIndex) {
                 <span class="space-right">${item['amount'][i]}</span>
                 <span class="underline-mark">${item['item'][i]}</span>
             </div>
-            <span>${item['price'][i]} €</span>
+            <span>${itemPrice} €</span>
         </div>
     
         <div class="card-extras">
@@ -62,7 +65,11 @@ function loadBasket(i, menuIndex) {
             </div>
         </div>
     </div>
+    <div class="hr-container">
+        <div class="hr"></div>
+    </div>
     `;
+    
 }
 
 
@@ -73,22 +80,24 @@ function loadCosts(sum) {
         delivCosts = 0;
     }
     let totalCosts = sum + delivCosts;
+    
 
     return `
-        <div>
-            <span>Zwischensumme</span>
-            <span id="subtotal">${sum} €</span>
-        </div>
-        <div>
-            <span>Lieferkosten</span>
-            <span id="deliveryCosts">${delivCosts} €</span>
-        </div>
-        <div>
-            <span>Gesamt</span>
-            <span id="totalCosts">${totalCosts} €</span>
-        </div>
-
-        <button>Bezahlen()</button>    
+    <div class="costs-section">
+        <span>Zwischensumme</span>
+        <span id="subtotal">${fixNumber(sum)} €</span>
+    </div>
+    <div class="costs-section">
+        <span>Lieferkosten</span>
+        <span id="deliveryCosts">${fixNumber(delivCosts)} €</span>
+    </div>
+    <div class="costs-section">
+        <span><h4>Gesamt</h4></span>
+        <span><h4 id="totalCosts">${fixNumber(totalCosts)} €</h4></span>
+    </div>
+    <div class="costs-button">
+        <button class="button">Bezahlen (${fixNumber(totalCosts)} €)</button>
+    </div>    
     
     
     `;

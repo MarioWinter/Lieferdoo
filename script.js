@@ -19,17 +19,13 @@ function render() {
 function addToCard(menu) {
     let shoppingBasket = document.getElementById('shoppingCardContent');
     shoppingBasket.innerHTML = '';
+
     let j = getMenuIndex(menu);
     let index = getItemIndex(menu);
-
-
     pushBasket(j, index);
-
   
     for (let i = 0; i < basket[0]['item'].length; i++) {
-        let item = basket[0]['item'][i];
-        let menuIndex = getMenuIndex(item); 
-        shoppingBasket.innerHTML += loadBasket(i, menuIndex);
+        shoppingBasket.innerHTML += loadBasket(i);
     }
     loadBasketCounter();
     
@@ -45,10 +41,7 @@ function removeFromCard(menu) {
     basketReduce(j, index);
 
     for (let i = 0; i < basket[0]['item'].length; i++) {
-        let item = basket[0]['item'][i];
-        let menuIndex = getMenuIndex(item);
-        shoppingBasket.innerHTML += loadBasket(i, menuIndex);
-
+        shoppingBasket.innerHTML += loadBasket(i);
     }
 
     if (basket[0]['item'].length == 0) {
@@ -110,6 +103,7 @@ function getMenuIndex(menu) {
     return index;
 }
 
+
 function getItemIndex(menu) {
     for (let i = 0; i < food.length; i++) {
 
@@ -163,6 +157,7 @@ function costsUp(menu) {
     costs.innerHTML = loadCosts(basket[0].sum);
 }
 
+
 function costsDown(menu) {
     let costs = document.getElementById('costs');
     let i = getItemIndex(menu);
@@ -172,7 +167,11 @@ function costsDown(menu) {
 
     basket[0].sum = basketSum - itemPrice;
     costs.innerHTML = ''
-    costs.innerHTML = loadCosts(basket[0].sum);
+    if (basket[0]['item'].length == 0) {
+    
+    } else {
+        costs.innerHTML = loadCosts(basket[0].sum);
+    };
 }
 
 
@@ -193,4 +192,12 @@ function loadBasketCounter() {
     basketCount.innerHTML = '';
     basketCount.innerHTML = basketCounter();
 
+}
+
+
+function fixNumber(nmb) {
+    let fixNmb = nmb.toFixed(2);
+    fixNmb = String(fixNmb);
+    newNmb = fixNmb.replace(".", ",");
+    return newNmb;
 }
