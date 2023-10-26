@@ -1,0 +1,27 @@
+@media (max-width: 1000px) {
+    .left-container {
+        width: 100%;
+    }
+
+    .shopping-card {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 80px);
+        top: 80px;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+
+    .basket-mobile {
+        display: block;
+    }
+
+    .costs-container {
+        position: fixed;
+        bottom: 0px;
+        z-index: 3;
+        padding-bottom: 20px;
+    }
+}
