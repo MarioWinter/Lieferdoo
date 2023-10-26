@@ -1,3 +1,7 @@
+let delivCosts = 2;
+let totalCosts
+
+
 function render() {
 
     let menuContent = document.getElementById('menuContent');
@@ -148,29 +152,35 @@ function amountReduce(j) {
 
 function costsUp(menu) {
     let costs = document.getElementById('costs');
+    let basketMobile = document.getElementById('basketMobile');
     let i = getItemIndex(menu);
     let itemPrice = food[i].price;
     let basketSum = basket[0].sum;
     
     basket[0].sum = basketSum + itemPrice;
-    costs.innerHTML = ''
+    costs.innerHTML = '';
+    basketMobile.innerHTML = '';
     costs.innerHTML = loadCosts(basket[0].sum);
+    basketMobile.innerHTML = loadCostsMobileBasket(basket[0].sum);
 }
 
 
 function costsDown(menu) {
     let costs = document.getElementById('costs');
+    let basketMobile = document.getElementById('basketMobile');
     let i = getItemIndex(menu);
     let itemPrice = food[i].price;
     let basketSum = basket[0].sum;
     
 
     basket[0].sum = basketSum - itemPrice;
-    costs.innerHTML = ''
+    costs.innerHTML = '';
+    basketMobile.innerHTML = '';
     if (basket[0]['item'].length == 0) {
     
     } else {
         costs.innerHTML = loadCosts(basket[0].sum);
+        basketMobile.innerHTML = loadCostsMobileBasket(basket[0].sum);
     };
 }
 
@@ -200,4 +210,37 @@ function fixNumber(nmb) {
     fixNmb = String(fixNmb);
     newNmb = fixNmb.replace(".", ",");
     return newNmb;
+}
+
+
+function costCalculator(sum){
+    delivCosts = 2;
+    
+    if (sum > 25) {
+        delivCosts = 0;
+    }
+    totalCosts = sum + delivCosts;
+}
+
+
+function closeConfirmation() {
+    document.getElementById('checkOut').style.display = 'none';
+    loadEmptyCard();
+    clearBasket();
+}
+
+
+function showConfirmation() {
+    document.getElementById('checkOut').style.display = 'block';
+}
+
+
+function clearBasket() {
+    basket[0].item = [];
+    basket[0].amount = [];
+    basket[0].price = [];
+    basket[0].itemdescription = [];
+    basket[0].sum = 0;
+    document.getElementById('basketCounter').innerHTML = 0;
+    document.getElementById('basketMobile').innerHTML = '';
 }

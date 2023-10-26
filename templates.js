@@ -21,6 +21,7 @@ function loadMenuItem(i) {
 
 function loadEmptyCard() {
     let emptyCard = document.getElementById('shoppingCardContent');
+    document.getElementById('costs').innerHTML = '';
     emptyCard.innerHTML = '';
     
     emptyCard.innerHTML = `
@@ -74,12 +75,7 @@ function loadBasket(i) {
 
 
 function loadCosts(sum) {
-    let delivCosts = 2;
-    
-    if (sum > 25) {
-        delivCosts = 0;
-    }
-    let totalCosts = sum + delivCosts;
+    costCalculator(sum);
     
 
     return `
@@ -96,12 +92,21 @@ function loadCosts(sum) {
         <span><h4 id="totalCosts">${fixNumber(totalCosts)} €</h4></span>
     </div>
     <div class="costs-button">
-        <button class="button">Bezahlen (${fixNumber(totalCosts)} €)</button>
+        <button class="button" onclick="showConfirmation()">Bezahlen (${fixNumber(totalCosts)} €)</button>
     </div>    
     
-    
     `;
+}
 
+function loadCostsMobileBasket(sum) {
+    costCalculator(sum);
+    
+
+    return `
+    <div class="costs-button-mobile">
+        <button class="button" onclick="showConfirmation()">Bezahlen (${fixNumber(totalCosts)} €)</button>
+    </div>    
+    `;
 }
 
 
