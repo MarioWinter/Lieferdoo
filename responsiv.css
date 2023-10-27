@@ -1,3 +1,18 @@
+@media (min-with:100px) {
+
+
+
+}
+
+
+@media (max-width: 1300px) {
+
+    .info-footer {
+        width: 100%;
+    }
+
+}
+
 @media (max-width: 1000px) {
     .left-container {
         width: 100%;
@@ -5,23 +20,93 @@
 
     .shopping-card {
         display: none;
-        position: fixed;
+        position: absolute;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - (146px + 80px));
         top: 80px;
         left: 0;
         right: 0;
+        bottom: 0px;
         z-index: 3;
+        padding-bottom: 20px;
+        box-shadow: none;
     }
+
+    .costs-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: auto;
+    }
+
+    .shiopping-card-upper {
+        height: max-content;
+    }
+    
+    .costs-button {
+        margin-bottom: 20px;
+    }
+
 
     .basket-mobile {
         display: block;
     }
 
-    .costs-container {
-        position: fixed;
-        bottom: 0px;
-        z-index: 3;
-        padding-bottom: 20px;
+
+    .shopping-container {
+        height: 100%;
     }
+
+    .main-logo {
+        width: 120px;
+        height: 50px;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    .atf-img {
+        height: auto;
+    }
+
+    .rastaurant-description {
+        width: 100%;
+    }
+
+    .info-footer {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        gap: 7px;
+        margin-top: var(--space-20);
+    }
+
+    footer {
+        height: 100%;
+        padding-bottom: var(--space-20);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .rastaurant-categories-container{
+        display: none;
+    }
+
+    .mobile-dots {
+        display: none;
+    }
+
+    .restaurant-delivery {
+        gap: 7px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 10px;
+
+    }
+
 }

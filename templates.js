@@ -104,7 +104,7 @@ function loadCostsMobileBasket(sum) {
 
     return `
     <div class="costs-button-mobile">
-        <button class="button" onclick="showConfirmation()">Bezahlen (${fixNumber(totalCosts)} €)</button>
+        <button class="button" onclick="showShoppingCard()">Bezahlen (${fixNumber(totalCosts)} €)</button>
     </div>    
     `;
 }

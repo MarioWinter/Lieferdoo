@@ -28,6 +28,7 @@
 
 }
 
+
 body {
     font-size: 14px;
 }
@@ -141,6 +142,7 @@ header {
 
 .shopping-container {
     text-align: center;
+    justify-content: space-between;
 }
 
 .header-shopping {

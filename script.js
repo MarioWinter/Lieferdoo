@@ -244,3 +244,26 @@ function clearBasket() {
     document.getElementById('basketCounter').innerHTML = 0;
     document.getElementById('basketMobile').innerHTML = '';
 }
+
+
+let shoppingCardCheck = true
+function showShoppingCard() {
+    if (window.innerWidth > 1000) {
+        document.getElementById('shoppingCard').style.display = 'block';
+    }
+    if (window.innerWidth <= 1000) {
+        if (shoppingCardCheck) {
+        document.getElementById('shoppingCard').style.display = 'block';
+        document.getElementById('basketMobile').style.display = 'none';
+        document.getElementById('leftContainer').style.display = 'none';
+        document.getElementById('mobileFooter').style.display = 'none';
+        shoppingCardCheck = false;
+        } else if (shoppingCardCheck == false) {
+            document.getElementById('shoppingCard').style.display = 'none';
+            document.getElementById('basketMobile').style.display = 'block';
+            document.getElementById('leftContainer').style.display = 'block';
+            document.getElementById('mobileFooter').style.display = 'flex';
+            shoppingCardCheck = true;
+        } 
+    }
+}
