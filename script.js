@@ -1,6 +1,6 @@
 let delivCosts = 2;
 let totalCosts
-
+let isLiked = false;
 
 function render() {
 
@@ -13,10 +13,7 @@ function render() {
     }
     loadEmptyCard();
     loadBasketCounter();
-    // closeCart();
-    // loadModal();
-    // hideModal();
-    // templateSumMobile();
+
 }
 
 
@@ -256,16 +253,27 @@ function showShoppingCard() {
         document.getElementById('shoppingCard').classList.add('shopping-card-mobile');
         document.getElementById('costs').classList.add('costs-container-mobile');
         document.getElementById('basketMobile').classList.add('d-none');
-        document.getElementById('leftContainer').classList.add('d-none');
+        document.getElementById('leftContainer').classList.add('left-container-mobile');
         document.getElementById('mobileFooter').style.display = 'none';
         shoppingCardCheck = false;
         } else if (shoppingCardCheck == false) {
             document.getElementById('shoppingCard').classList.remove('shopping-card-mobile');
             document.getElementById('costs').classList.remove('costs-container-mobile');
             document.getElementById('basketMobile').classList.remove('d-none');
-            document.getElementById('leftContainer').classList.remove('d-none');
+            document.getElementById('leftContainer').classList.remove('left-container-mobile');
             document.getElementById('mobileFooter').style.display = 'flex';
             shoppingCardCheck = true;
         } 
+    }
+}
+
+function likeHandleClick() {
+    let likeButton = document.getElementById('likeButton');
+    if (isLiked) {
+        likeButton.classList.remove("clicked");
+        isLiked = false;
+    } else {
+        likeButton.classList.add("clicked");
+        isLiked = true;
     }
 }

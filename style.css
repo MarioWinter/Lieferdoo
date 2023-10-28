@@ -127,6 +127,13 @@ header {
 .left-container {
     width: calc(100vw - var(--feed-sidebar-width));
     margin-top: -8px;
+    position: static !important;
+    display: block !important;
+}
+
+
+.left-container-mobile {
+    position: static !important;
 }
 
 
@@ -346,6 +353,7 @@ justify-content: center;
 .upper-bkd-container {
     width: 100%;
     box-shadow: 0px 3px 5px 0px var(--border-grey);
+    padding: 0px 10px;
 }
 
 
@@ -353,6 +361,10 @@ justify-content: center;
     background-color: var(--secondary-backround-color);
     margin-top: 5px;
     width: 100%;
+}
+
+.menu-container {
+    padding: 0px 10px;
 }
 
 
@@ -425,6 +437,10 @@ justify-content: center;
 
 .impressum {
     margin-left: var(--space-4);
+}
+
+.main-space-p {
+    margin: 0px 10px;
 }
 
 
@@ -625,6 +641,23 @@ justify-content: center;
     width: 55px;
 }
 
+
+@keyframes fillHeart {
+    0% {
+        fill: none;
+    }
+    100% {
+        fill: black;
+    }
+}
+
+#likeButton.clicked {
+    animation: fillHeart 0.3s ease forwards;
+}
+
+.clicked {
+    fill: black;
+}
 
 
 
