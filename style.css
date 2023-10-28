@@ -137,6 +137,7 @@ header {
     position: sticky;
     top: 0;
     box-shadow: -2px 3px 5px 0px var(--border-grey);
+    overflow: scroll;
 }
 
 
@@ -465,7 +466,7 @@ justify-content: center;
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 
@@ -623,6 +624,8 @@ justify-content: center;
     height: 55px;
     width: 55px;
 }
+
+
 
 
 

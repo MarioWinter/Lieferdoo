@@ -1,4 +1,4 @@
-@media (min-with:100px) {
+@media (min-with:1000px) {
 
 
 
@@ -18,8 +18,7 @@
         width: 100%;
     }
 
-    .shopping-card {
-        display: none;
+    .shopping-card-mobile {
         position: absolute;
         width: 100%;
         height: calc(100vh - (146px + 80px));
@@ -30,19 +29,22 @@
         z-index: 3;
         padding-bottom: 20px;
         box-shadow: none;
+        overflow: none;
     }
-
-    .costs-container {
+    
+    .costs-container-mobile {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         height: auto;
     }
 
+
     .shiopping-card-upper {
         height: max-content;
     }
     
+
     .costs-button {
         margin-bottom: 20px;
     }

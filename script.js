@@ -249,19 +249,21 @@ function clearBasket() {
 let shoppingCardCheck = true
 function showShoppingCard() {
     if (window.innerWidth > 1000) {
-        document.getElementById('shoppingCard').style.display = 'block';
+        document.getElementById('shoppingCard');
     }
     if (window.innerWidth <= 1000) {
         if (shoppingCardCheck) {
-        document.getElementById('shoppingCard').style.display = 'block';
-        document.getElementById('basketMobile').style.display = 'none';
-        document.getElementById('leftContainer').style.display = 'none';
+        document.getElementById('shoppingCard').classList.add('shopping-card-mobile');
+        document.getElementById('costs').classList.add('costs-container-mobile');
+        document.getElementById('basketMobile').classList.add('d-none');
+        document.getElementById('leftContainer').classList.add('d-none');
         document.getElementById('mobileFooter').style.display = 'none';
         shoppingCardCheck = false;
         } else if (shoppingCardCheck == false) {
-            document.getElementById('shoppingCard').style.display = 'none';
-            document.getElementById('basketMobile').style.display = 'block';
-            document.getElementById('leftContainer').style.display = 'block';
+            document.getElementById('shoppingCard').classList.remove('shopping-card-mobile');
+            document.getElementById('costs').classList.remove('costs-container-mobile');
+            document.getElementById('basketMobile').classList.remove('d-none');
+            document.getElementById('leftContainer').classList.remove('d-none');
             document.getElementById('mobileFooter').style.display = 'flex';
             shoppingCardCheck = true;
         } 
